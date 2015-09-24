@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, NamePickDelegate {
+class ViewController: UIViewController, NamePickDelegate, PickDateDelegate {
 
     
     @IBOutlet weak var nameLabel: UILabel!
-    
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +26,24 @@ class ViewController: UIViewController, NamePickDelegate {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         (segue.destinationViewController as? NamePickViewController)?.delegate = self
+        (segue.destinationViewController as? PickDateViewController)?.delegate = self
     }
+    
+    // delegates
     
     func didPickName(name: String) {
         nameLabel.text = name
+    }
+    
+    func didPickDate(date: NSDate?) {
+        if date == nil {
+            return
+        }
+        
+        let date = date!
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        dateLabel.text = formatter.stringFromDate(date)
     }
 }
 

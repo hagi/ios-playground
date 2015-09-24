@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B36B7001BB487CA00474D11 /* PickDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B36B6FF1BB487CA00474D11 /* PickDateViewController.swift */; };
 		1B53D5E21BB338D900034A78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53D5E11BB338D900034A78 /* AppDelegate.swift */; };
 		1B53D5E41BB338D900034A78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B53D5E31BB338D900034A78 /* ViewController.swift */; };
 		1B53D5E71BB338D900034A78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B53D5E51BB338D900034A78 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B36B6FF1BB487CA00474D11 /* PickDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickDateViewController.swift; sourceTree = "<group>"; };
 		1B53D5DC1BB338D900034A78 /* PassingData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassingData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B53D5E01BB338D900034A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B53D5E11BB338D900034A78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				1B53D5E11BB338D900034A78 /* AppDelegate.swift */,
 				1B53D5E31BB338D900034A78 /* ViewController.swift */,
+				1B36B6FF1BB487CA00474D11 /* PickDateViewController.swift */,
 				1B53D6011BB3397400034A78 /* NamePickViewController.swift */,
 				1B53D5E51BB338D900034A78 /* Main.storyboard */,
 				1B53D5E81BB338D900034A78 /* Images.xcassets */,
@@ -218,6 +221,7 @@
 				1B53D5E41BB338D900034A78 /* ViewController.swift in Sources */,
 				1B53D6021BB3397400034A78 /* NamePickViewController.swift in Sources */,
 				1B53D5E21BB338D900034A78 /* AppDelegate.swift in Sources */,
+				1B36B7001BB487CA00474D11 /* PickDateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +417,7 @@
 				1B53D5FD1BB338D900034A78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B53D5FE1BB338D900034A78 /* Build configuration list for PBXNativeTarget "PassingDataTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				1B53D6001BB338D900034A78 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

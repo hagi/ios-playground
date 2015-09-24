@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -31,15 +32,77 @@
                                     <segue destination="l9E-qJ-Gax" kind="show" id="zZz-py-MlP"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chosen Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BN-Ug-JqX">
+                                <rect key="frame" x="16" y="87" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4g-gy-hyJ">
+                                <rect key="frame" x="16" y="116" width="66" height="30"/>
+                                <state key="normal" title="Pick Date">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0Y8-tN-owc" kind="show" id="4df-xY-Hi0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="dateLabel" destination="1BN-Ug-JqX" id="xKx-vv-ozn"/>
                         <outlet property="nameLabel" destination="ici-aC-zTR" id="YE0-0r-b9B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Pick Date View Controller-->
+        <scene sceneID="RVV-HA-Vqu">
+            <objects>
+                <viewController id="0Y8-tN-owc" customClass="PickDateViewController" customModule="PassingData" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YIk-rD-JVx"/>
+                        <viewControllerLayoutGuide type="bottom" id="QXd-Sp-qIv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rxD-O0-GDK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="SAT-1J-gua">
+                                <rect key="frame" x="16" y="219" width="568" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="464816019.68956399">
+                                    <!--2015-09-24 19:33:39 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wmw-07-wgH">
+                                <rect key="frame" x="16" y="381" width="568" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleSave:" destination="0Y8-tN-owc" eventType="touchUpInside" id="4qh-tb-kTS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wmw-07-wgH" firstAttribute="leading" secondItem="rxD-O0-GDK" secondAttribute="leadingMargin" id="1x6-xI-skf"/>
+                            <constraint firstItem="SAT-1J-gua" firstAttribute="trailing" secondItem="rxD-O0-GDK" secondAttribute="trailingMargin" id="CHs-N8-pSC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wmw-07-wgH" secondAttribute="trailing" id="OHp-br-l99"/>
+                            <constraint firstAttribute="centerY" secondItem="SAT-1J-gua" secondAttribute="centerY" id="eMv-m0-v98"/>
+                            <constraint firstItem="SAT-1J-gua" firstAttribute="leading" secondItem="rxD-O0-GDK" secondAttribute="leadingMargin" id="fVf-BD-YBc"/>
+                            <constraint firstItem="Wmw-07-wgH" firstAttribute="top" secondItem="SAT-1J-gua" secondAttribute="bottom" id="qGu-8r-csJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="SAT-1J-gua" id="U2A-0D-6cJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l4s-ml-XI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1114" y="315"/>
         </scene>
         <!--Name Pick View Controller-->
         <scene sceneID="2RT-bo-fEK">
