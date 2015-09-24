@@ -15,6 +15,7 @@ protocol NamePickDelegate {
 class NamePickViewController: UIViewController {
 
     var delegate: NamePickDelegate?
+    var didPickNameHandler: (String -> Void)?
     
     @IBOutlet weak var nameField: UITextField!
     
@@ -35,6 +36,8 @@ class NamePickViewController: UIViewController {
         println("name choosen: \(name)")
 
         delegate?.didPickName(name)
+        didPickNameHandler?(name)
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
 

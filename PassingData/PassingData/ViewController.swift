@@ -14,6 +14,9 @@ class ViewController: UIViewController, NamePickDelegate, PickDateDelegate {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    @IBOutlet weak var value1: UILabel!
+    @IBOutlet weak var value2: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,8 +28,26 @@ class ViewController: UIViewController, NamePickDelegate, PickDateDelegate {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        (segue.destinationViewController as? NamePickViewController)?.delegate = self
-        (segue.destinationViewController as? PickDateViewController)?.delegate = self
+        
+        // by segue identifier & given closure
+        if let identifier = segue.identifier,
+            controller = segue.destinationViewController as? NamePickViewController {
+                
+            switch identifier {
+            case "value1":
+                controller.didPickNameHandler = { self.value1.text = $0 }
+                
+            case "value2":
+                controller.didPickNameHandler = { self.value2.text = $0 }
+                
+            default: break
+            }
+
+        // by simple delegate
+        } else {
+            (segue.destinationViewController as? NamePickViewController)?.delegate = self
+            (segue.destinationViewController as? PickDateViewController)?.delegate = self
+        }
     }
     
     // delegates
