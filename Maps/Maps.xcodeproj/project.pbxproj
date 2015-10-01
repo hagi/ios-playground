@@ -14,6 +14,8 @@
 		1B7119F91BBC609F0042E0C1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7119F71BBC609F0042E0C1 /* LaunchScreen.xib */; };
 		1B711A051BBC609F0042E0C1 /* MapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B711A041BBC609F0042E0C1 /* MapsTests.swift */; };
 		1B711A0F1BBC63070042E0C1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B711A0E1BBC63070042E0C1 /* MapViewController.swift */; };
+		1BF025C61BBDD81C00931B3E /* CrosshairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF025C51BBDD81C00931B3E /* CrosshairViewController.swift */; };
+		1BF025C81BBDDF0C00931B3E /* CrosshairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF025C71BBDDF0C00931B3E /* CrosshairView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		1B711A031BBC609F0042E0C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B711A041BBC609F0042E0C1 /* MapsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsTests.swift; sourceTree = "<group>"; };
 		1B711A0E1BBC63070042E0C1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1BF025C51BBDD81C00931B3E /* CrosshairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrosshairViewController.swift; sourceTree = "<group>"; };
+		1BF025C71BBDDF0C00931B3E /* CrosshairView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrosshairView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			children = (
 				1B7119EE1BBC609F0042E0C1 /* AppDelegate.swift */,
 				1B7119F01BBC609F0042E0C1 /* ViewController.swift */,
+				1BF025C51BBDD81C00931B3E /* CrosshairViewController.swift */,
+				1BF025C71BBDDF0C00931B3E /* CrosshairView.swift */,
 				1B7119F21BBC609F0042E0C1 /* Main.storyboard */,
 				1B711A0E1BBC63070042E0C1 /* MapViewController.swift */,
 				1B7119F51BBC609F0042E0C1 /* Images.xcassets */,
@@ -216,7 +222,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B7119F11BBC609F0042E0C1 /* ViewController.swift in Sources */,
+				1BF025C61BBDD81C00931B3E /* CrosshairViewController.swift in Sources */,
 				1B711A0F1BBC63070042E0C1 /* MapViewController.swift in Sources */,
+				1BF025C81BBDDF0C00931B3E /* CrosshairView.swift in Sources */,
 				1B7119EF1BBC609F0042E0C1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +421,7 @@
 				1B711A0A1BBC609F0042E0C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B711A0B1BBC609F0042E0C1 /* Build configuration list for PBXNativeTarget "MapsTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +430,7 @@
 				1B711A0D1BBC609F0042E0C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
