@@ -59,7 +59,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHB-nF-Kml">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sHB-nF-Kml">
                                 <rect key="frame" x="204" y="329" width="193" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="crosshair position">
@@ -81,8 +81,10 @@
                             <constraint firstItem="OHb-UE-34c" firstAttribute="leading" secondItem="4p8-bY-E6X" secondAttribute="leading" id="Jws-V2-RS5"/>
                             <constraint firstAttribute="centerY" secondItem="5E8-gK-QXa" secondAttribute="centerY" id="NSI-Ki-7zY"/>
                             <constraint firstItem="QF8-0q-0Nx" firstAttribute="leading" secondItem="OHb-UE-34c" secondAttribute="trailing" id="QDc-c6-Y29"/>
+                            <constraint firstItem="sHB-nF-Kml" firstAttribute="top" secondItem="5E8-gK-QXa" secondAttribute="bottom" constant="8" id="WDk-Un-Cwe"/>
                             <constraint firstItem="4p8-bY-E6X" firstAttribute="top" secondItem="OHb-UE-34c" secondAttribute="bottom" constant="8" symbolic="YES" id="aA1-KP-6uS"/>
                             <constraint firstItem="OHb-UE-34c" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ju3-pp-Uax"/>
+                            <constraint firstAttribute="centerX" secondItem="sHB-nF-Kml" secondAttribute="centerX" id="nVs-QO-ISZ"/>
                             <constraint firstItem="cu1-Sj-seI" firstAttribute="trailing" secondItem="QF8-0q-0Nx" secondAttribute="trailing" id="sba-LP-TYc"/>
                             <constraint firstItem="OHb-UE-34c" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="sqB-iM-UMN"/>
                             <constraint firstItem="OHb-UE-34c" firstAttribute="baseline" secondItem="QF8-0q-0Nx" secondAttribute="baseline" id="u0k-XW-8JY"/>
@@ -144,22 +146,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="FHK-pS-pQf">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHK-pS-pQf">
+                                <rect key="frame" x="0.0" y="20" width="600" height="530"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="XMz-RA-Zn3" appends="YES" id="uR5-W7-EQc"/>
                                 </connections>
                             </mapView>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-AK-3nD" customClass="CrosshairView" customModule="Maps" customModuleProvider="target">
-                                <rect key="frame" x="150" y="150" width="300" height="300"/>
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-AK-3nD" customClass="CrosshairView" customModule="Maps" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="600" height="530"/>
+                                <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U89-7C-20Y">
+                                <rect key="frame" x="262" y="560" width="76" height="30"/>
+                                <state key="normal" title="Put marker">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handlePickButton:" destination="Gdk-WD-ITY" eventType="touchUpInside" id="Yoz-g7-gCf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="0nL-AK-3nD" secondAttribute="centerY" id="CWA-Cu-k8s"/>
-                            <constraint firstAttribute="centerX" secondItem="0nL-AK-3nD" secondAttribute="centerX" id="Ldk-Fa-AxS"/>
+                            <constraint firstItem="0nL-AK-3nD" firstAttribute="top" secondItem="T5C-tL-rOv" secondAttribute="bottom" id="2Lj-SM-vdV"/>
+                            <constraint firstAttribute="trailing" secondItem="0nL-AK-3nD" secondAttribute="trailing" id="FrW-F8-HnY"/>
+                            <constraint firstItem="U89-7C-20Y" firstAttribute="top" secondItem="FHK-pS-pQf" secondAttribute="bottom" constant="10" id="MMv-is-Q93"/>
+                            <constraint firstItem="0nL-AK-3nD" firstAttribute="leading" secondItem="0eE-Zj-SPC" secondAttribute="leading" id="Wtx-2K-7ae"/>
+                            <constraint firstAttribute="centerX" secondItem="U89-7C-20Y" secondAttribute="centerX" id="XCV-3E-wd5"/>
+                            <constraint firstAttribute="trailing" secondItem="FHK-pS-pQf" secondAttribute="trailing" id="fZ6-kO-Upn"/>
+                            <constraint firstItem="FHK-pS-pQf" firstAttribute="leading" secondItem="0eE-Zj-SPC" secondAttribute="leading" id="g3M-HP-uHu"/>
+                            <constraint firstItem="0nL-AK-3nD" firstAttribute="height" secondItem="FHK-pS-pQf" secondAttribute="height" id="itG-kV-bGM"/>
+                            <constraint firstItem="FHK-pS-pQf" firstAttribute="top" secondItem="T5C-tL-rOv" secondAttribute="bottom" id="u23-c4-g2F"/>
+                            <constraint firstItem="psY-fO-6fg" firstAttribute="top" secondItem="U89-7C-20Y" secondAttribute="bottom" constant="10" id="v7v-ka-h8q"/>
                         </constraints>
                     </view>
                     <connections>
@@ -174,7 +193,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1041" y="1139"/>
+            <point key="canvasLocation" x="1041" y="1173"/>
         </scene>
     </scenes>
 </document>

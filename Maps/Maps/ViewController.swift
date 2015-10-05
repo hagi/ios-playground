@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         (segue.destinationViewController as? MapViewController)?.chosenHandler = { [weak self] in self?.location = $0 }
+        (segue.destinationViewController as? CrosshairViewController)?.chosenHandler = { [weak self] in self?.location = $0 }
     }
 
 }

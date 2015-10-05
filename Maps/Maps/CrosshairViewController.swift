@@ -14,10 +14,28 @@ class CrosshairViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var crosshairView: UIView!
     
+    var chosenHandler: (CLLocationCoordinate2D -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        println("map view:\(mapView.bounds.origin.x) / \(mapView.bounds.origin.y) / \(mapView.bounds.size)")
+//        println("view in controller:\(view.bounds.origin.x) / \(view.bounds.origin.y) / \(view.bounds.size)")
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        println("map view:\(mapView.bounds.origin.x) / \(mapView.bounds.origin.y) / \(mapView.bounds.size)")
+        println("view in controller:\(view.bounds.origin.x) / \(view.bounds.origin.y) / \(view.bounds.size)")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +52,17 @@ class CrosshairViewController: UIViewController {
         
     }
     
+    @IBAction func handlePickButton(sender: UIButton) {
+        let coordinates = mapView.centerCoordinate
+        chosenHandler?(coordinates)
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinates
+        
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.addAnnotation(annotation)
+//        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation
