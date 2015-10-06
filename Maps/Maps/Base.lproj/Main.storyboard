@@ -151,11 +151,17 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="XMz-RA-Zn3" appends="YES" id="uR5-W7-EQc"/>
+                                    <outletCollection property="gestureRecognizers" destination="TOV-bA-ofU" appends="YES" id="UH8-Dq-f00"/>
                                 </connections>
                             </mapView>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-AK-3nD" customClass="CrosshairView" customModule="Maps" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="530"/>
                                 <color key="backgroundColor" white="1" alpha="0.25" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="TOV-bA-ofU" appends="YES" id="VOS-h7-Aek"/>
+                                    <outletCollection property="gestureRecognizers" destination="TOV-bA-ofU" appends="YES" id="2ll-4l-yRH"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U89-7C-20Y">
                                 <rect key="frame" x="262" y="560" width="76" height="30"/>
@@ -192,6 +198,11 @@
                         <action selector="handlePick:" destination="Gdk-WD-ITY" id="edD-sO-grw"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="TOV-bA-ofU">
+                    <connections>
+                        <action selector="handleTap:" destination="Gdk-WD-ITY" id="QwE-cv-S0Z"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1041" y="1173"/>
         </scene>

@@ -64,6 +64,19 @@ class CrosshairViewController: UIViewController {
 //        dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func handleTap(sender: UITapGestureRecognizer) {
+        println("tap")
+        
+        if sender.state == .Ended {
+            println("tapped")
+            let point = sender.locationInView(mapView)
+            println("point: \(point)")
+            let coordinate = mapView.convertPoint(point, toCoordinateFromView: mapView)
+            mapView.setCenterCoordinate(coordinate, animated: true)
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
