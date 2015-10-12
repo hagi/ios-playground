@@ -14,22 +14,35 @@ class ViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        println("view did load, text? \(textView.text)")
+        // centerVertically(textView)
+        // textView.becomeFirstResponder()
         textView.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        println("view will appear, text? \(textView.text)")
+        // centerVertically(textView)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        println("view did appear, text? \(textView.text)")
+         centerVertically(textView)
+        super.viewDidAppear(animated)
+        // textView.becomeFirstResponder() // when uncommented 'placeholder' jumps from top :(
+    }
+    
+    
     func textViewDidBeginEditing(textView: UITextView) {
+        println("textViewDidBeginEditing, text? \(textView.text)")
         centerVertically(textView)
     }
     
     func textViewDidEndEditing(textView: UITextView) {
+        println("textViewDidEndEditing, text? \(textView.text)")
         centerVertically(textView)
-        println("got: \(textView.text)")
     }
     
     func textViewDidChange(textView: UITextView) {
@@ -38,6 +51,8 @@ class ViewController: UIViewController, UITextViewDelegate {
 
     // http://stackoverflow.com/questions/12591192/center-text-vertically-in-a-uitextview
     func centerVertically(textView: UITextView) {
+        println("text view frame: \(textView.frame.size)")
+        
         println("bounds: \(textView.bounds.size)")
         println("zoom: \(textView.zoomScale)")
         let size = textView.sizeThatFits(textView.bounds.size)
@@ -48,10 +63,5 @@ class ViewController: UIViewController, UITextViewDelegate {
         textView.contentOffset = CGPointMake(0, -topOffset)
     }
     
-    
-    
-    
-
-
 }
 
