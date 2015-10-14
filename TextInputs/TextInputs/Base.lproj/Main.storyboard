@@ -1,10 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="t7Q-IW-jbc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="Rq7-QN-DkL">
+            <objects>
+                <viewController id="t7Q-IW-jbc" customClass="MainViewController" customModule="TextInputs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZRu-e3-oJC"/>
+                        <viewControllerLayoutGuide type="bottom" id="S8g-9H-VoW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rlN-hW-EA3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rV-ga-9Lg">
+                                <rect key="frame" x="262" y="285" width="76" height="30"/>
+                                <state key="normal" title="UITextView">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="vXK-4R-vdU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGA-WX-bkb">
+                                <rect key="frame" x="262" y="323" width="77" height="30"/>
+                                <state key="normal" title="UITextField">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="PiX-jY-oDZ" kind="show" id="YTR-R4-gFB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="dGA-WX-bkb" secondAttribute="centerX" id="KD6-J5-mjD"/>
+                            <constraint firstItem="dGA-WX-bkb" firstAttribute="top" secondItem="1rV-ga-9Lg" secondAttribute="bottom" constant="8" id="WC4-uZ-8ii"/>
+                            <constraint firstAttribute="centerX" secondItem="1rV-ga-9Lg" secondAttribute="centerX" id="dJG-mE-g7O"/>
+                            <constraint firstAttribute="centerY" secondItem="1rV-ga-9Lg" secondAttribute="centerY" id="feL-DR-7ya"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uFl-0d-7ht" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="199" y="-555"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -37,6 +81,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="915" y="-555"/>
+        </scene>
+        <!--Field View Controller-->
+        <scene sceneID="RMp-ad-VLt">
+            <objects>
+                <viewController id="PiX-jY-oDZ" customClass="FieldViewController" customModule="TextInputs" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="btG-HK-Zwv"/>
+                        <viewControllerLayoutGuide type="bottom" id="HK8-Hj-PVa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fzZ-L4-clw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="something..." textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="CS8-f7-HaL">
+                                <rect key="frame" x="16" y="276" width="568" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CS8-f7-HaL" firstAttribute="trailing" secondItem="fzZ-L4-clw" secondAttribute="trailingMargin" id="5AR-pa-ST6"/>
+                            <constraint firstItem="CS8-f7-HaL" firstAttribute="leading" secondItem="fzZ-L4-clw" secondAttribute="leadingMargin" id="9oI-fz-eVt"/>
+                            <constraint firstAttribute="centerY" secondItem="CS8-f7-HaL" secondAttribute="centerY" id="RxG-1N-z2a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="CS8-f7-HaL" id="ShI-H2-pCj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iMQ-bI-K61" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="199" y="184"/>
         </scene>
     </scenes>
 </document>

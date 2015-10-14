@@ -6,6 +6,15 @@
 //  Copyright (c) 2015 lazylabs. All rights reserved.
 //
 
+/*
+    Todo:
+    - resizable view depending on keyboard visibility
+    
+    Issues:
+    - default text jumps if keyboard visible on start (becomeFirstResponder)
+    - lines above default text are not centered on simulator
+*/
+
 import UIKit
 
 class ViewController: UIViewController, UITextViewDelegate {
@@ -17,7 +26,7 @@ class ViewController: UIViewController, UITextViewDelegate {
 
         println("view did load, text? \(textView.text)")
         // centerVertically(textView)
-        // textView.becomeFirstResponder()
+        textView.becomeFirstResponder()
         textView.delegate = self
     }
 

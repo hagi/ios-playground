@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B7D640E1BCEF0050089AD8B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D640D1BCEF0050089AD8B /* MainViewController.swift */; };
+		1B7D64101BCEF2450089AD8B /* FieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7D640F1BCEF2450089AD8B /* FieldViewController.swift */; };
 		1B95F0F21BC45C77002879C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B95F0F11BC45C77002879C1 /* AppDelegate.swift */; };
 		1B95F0F41BC45C77002879C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B95F0F31BC45C77002879C1 /* ViewController.swift */; };
 		1B95F0F71BC45C77002879C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B95F0F51BC45C77002879C1 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B7D640D1BCEF0050089AD8B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		1B7D640F1BCEF2450089AD8B /* FieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldViewController.swift; sourceTree = "<group>"; };
 		1B95F0EC1BC45C77002879C1 /* TextInputs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextInputs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B95F0F01BC45C77002879C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B95F0F11BC45C77002879C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +83,9 @@
 			children = (
 				1B95F0F11BC45C77002879C1 /* AppDelegate.swift */,
 				1B95F0F31BC45C77002879C1 /* ViewController.swift */,
+				1B7D640D1BCEF0050089AD8B /* MainViewController.swift */,
 				1B95F0F51BC45C77002879C1 /* Main.storyboard */,
+				1B7D640F1BCEF2450089AD8B /* FieldViewController.swift */,
 				1B95F0F81BC45C77002879C1 /* Images.xcassets */,
 				1B95F0FA1BC45C77002879C1 /* LaunchScreen.xib */,
 				1B95F0EF1BC45C77002879C1 /* Supporting Files */,
@@ -212,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7D640E1BCEF0050089AD8B /* MainViewController.swift in Sources */,
 				1B95F0F41BC45C77002879C1 /* ViewController.swift in Sources */,
 				1B95F0F21BC45C77002879C1 /* AppDelegate.swift in Sources */,
+				1B7D64101BCEF2450089AD8B /* FieldViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +417,7 @@
 				1B95F10D1BC45C77002879C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B95F10E1BC45C77002879C1 /* Build configuration list for PBXNativeTarget "TextInputsTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +426,7 @@
 				1B95F1101BC45C77002879C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
