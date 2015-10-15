@@ -9,6 +9,7 @@
 /*
     Todo:
     + centered text field which resizes font to fit entered text
+    + limit size of text
     - block adding more text to prevent scroll allowing downsizing font only
 
     Issues:
@@ -20,9 +21,20 @@
 
 import UIKit
 
-class FieldViewController: UIViewController {
+class FieldViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     
+    override func viewDidLoad() {
+        textField.delegate = self
+    }
+    
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        println("should change... text: \(textField.text), range: \(range), replacement: \(string)")
+        let newText = (textField.text as NSString).stringByReplacingCharactersInRange(range, withString: string)
+        return count(newText) > 10 ? false : true
+    }
     
 }
