@@ -51,6 +51,16 @@
                                     <segue destination="xcx-B8-MGT" kind="show" id="Pdt-o5-Fgu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aax-TE-wao">
+                                <rect key="frame" x="500" y="570" width="30" height="30"/>
+                                <state key="normal" title="edit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleEdit:" destination="wfN-et-DZ3" eventType="touchUpInside" id="AXb-Qg-ow9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -59,10 +69,18 @@
                             <constraint firstAttribute="trailingMargin" secondItem="QSd-Wc-zAE" secondAttribute="trailing" id="Hhc-9M-zqT"/>
                             <constraint firstItem="bbD-zG-aEk" firstAttribute="top" secondItem="g7D-sY-OKk" secondAttribute="bottom" id="Kob-Yl-PTt"/>
                             <constraint firstItem="bbD-zG-aEk" firstAttribute="top" secondItem="QSd-Wc-zAE" secondAttribute="bottom" id="TQL-Me-Om3"/>
+                            <constraint firstItem="QSd-Wc-zAE" firstAttribute="leading" secondItem="aax-TE-wao" secondAttribute="trailing" id="WQi-DB-KW7"/>
                             <constraint firstAttribute="trailing" secondItem="g7D-sY-OKk" secondAttribute="trailing" id="cdG-rw-iyf"/>
                             <constraint firstItem="bbD-zG-aEk" firstAttribute="top" secondItem="g7D-sY-OKk" secondAttribute="bottom" id="fJr-11-Efe"/>
+                            <constraint firstItem="QSd-Wc-zAE" firstAttribute="top" secondItem="aax-TE-wao" secondAttribute="bottom" id="i66-2v-eYF"/>
                             <constraint firstItem="bbD-zG-aEk" firstAttribute="top" secondItem="QSd-Wc-zAE" secondAttribute="bottom" id="qFw-de-rzS"/>
+                            <constraint firstItem="bbD-zG-aEk" firstAttribute="top" secondItem="aax-TE-wao" secondAttribute="bottom" id="se6-B0-YKS"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="i66-2v-eYF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="g7D-sY-OKk" id="fuP-1c-Sly"/>

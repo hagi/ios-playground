@@ -11,7 +11,9 @@
     todo:
     + dynamic height of rows depending on the data size
     + dynamic backgorund color change
-
+    + rearanging table cells
+    - removing table cells
+    - swipe gesture on cell
 */
 import UIKit
 
@@ -77,6 +79,26 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         data.append(value)
         tableView.reloadData()
     }
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        println("source idx: \(sourceIndexPath.row)")
+        println("dest idx: \(destinationIndexPath.row)")
+        
+        let from = sourceIndexPath.row
+        let to = destinationIndexPath.row
+        let element = data.removeAtIndex(from)
+        data.insert(element, atIndex: to)
+    }
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    @IBAction func handleEdit(sender: UIButton) {
+        tableView.setEditing(!tableView.editing, animated: true)
+    }
+    
+    
 }
 
 
