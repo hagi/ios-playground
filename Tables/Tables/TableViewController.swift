@@ -10,7 +10,7 @@
 /*
     todo:
     + dynamic height of rows depending on the data size
-    - dynamic backgorund change
+    + dynamic backgorund color change
 
 */
 import UIKit
@@ -45,7 +45,12 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let desc = data[indexPath.row]
         cell.textLabel?.text = data[indexPath.row]
-
+//        cell.backgroundView?.backgroundColor = UIColor(rgb: 0x0000ee)
+//        cell.selectedBackgroundView?.backgroundColor = UIColor(rgb: 0x00ff00)
+        cell.textLabel?.textColor = UIColor(rgb: 0xffffff)
+        cell.textLabel?.backgroundColor = UIColor(rgb: 0x2e8ece)
+        cell.contentView.backgroundColor = UIColor(rgb: 0x2e8ece)
+        
         return cell
     }
 
@@ -71,5 +76,17 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
     func addValueToData(value: String) {
         data.append(value)
         tableView.reloadData()
+    }
+}
+
+
+extension UIColor {
+    convenience init(rgb: UInt32) {
+        self.init(
+            red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgb & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgb & 0x0000FF) / 255.0,
+            alpha: 1.0
+        )
     }
 }
