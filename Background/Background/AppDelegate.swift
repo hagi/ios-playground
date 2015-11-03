@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert|UIUserNotificationType.Sound, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        
+        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(3600)
+        
         return true
     }
 
@@ -41,6 +47,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        
+        FetchRate.call { (error, value) in
+            
+            if error != nil {
+                println("app delegate got error: \(error)")
+            
+            } else {
+                println("app delegate got: \(value)")
+            }
+            
+            GenerateNotification.call(value)
+            completionHandler(error == nil ? UIBackgroundFetchResult.NewData : UIBackgroundFetchResult.Failed)
+        }
+    }
 
 }
 

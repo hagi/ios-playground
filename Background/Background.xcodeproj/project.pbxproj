@@ -13,6 +13,8 @@
 		1B2BCCC71BE7E7B30067DA14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B2BCCC61BE7E7B30067DA14 /* Images.xcassets */; };
 		1B2BCCCA1BE7E7B30067DA14 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B2BCCC81BE7E7B30067DA14 /* LaunchScreen.xib */; };
 		1B2BCCD61BE7E7B30067DA14 /* BackgroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2BCCD51BE7E7B30067DA14 /* BackgroundTests.swift */; };
+		1B58BF6A1BE93FE300573CC7 /* FetchRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B58BF691BE93FE300573CC7 /* FetchRate.swift */; };
+		1B8DD7A81BE95C4F008A2162 /* GenerateNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8DD7A71BE95C4F008A2162 /* GenerateNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,9 @@
 		1B2BCCCF1BE7E7B30067DA14 /* BackgroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackgroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B2BCCD41BE7E7B30067DA14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B2BCCD51BE7E7B30067DA14 /* BackgroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTests.swift; sourceTree = "<group>"; };
+		1B58BF691BE93FE300573CC7 /* FetchRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRate.swift; sourceTree = "<group>"; };
+		1B58BF6B1BE9442600573CC7 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
+		1B8DD7A71BE95C4F008A2162 /* GenerateNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				1B2BCCBF1BE7E7B30067DA14 /* AppDelegate.swift */,
+				1B8DD7A71BE95C4F008A2162 /* GenerateNotification.swift */,
+				1B58BF6B1BE9442600573CC7 /* Playground.playground */,
+				1B58BF691BE93FE300573CC7 /* FetchRate.swift */,
 				1B2BCCC11BE7E7B30067DA14 /* ViewController.swift */,
 				1B2BCCC31BE7E7B30067DA14 /* Main.storyboard */,
 				1B2BCCC61BE7E7B30067DA14 /* Images.xcassets */,
@@ -161,6 +169,11 @@
 				TargetAttributes = {
 					1B2BCCB91BE7E7B30067DA14 = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					1B2BCCCE1BE7E7B30067DA14 = {
 						CreatedOnToolsVersion = 6.4;
@@ -214,6 +227,8 @@
 			files = (
 				1B2BCCC21BE7E7B30067DA14 /* ViewController.swift in Sources */,
 				1B2BCCC01BE7E7B30067DA14 /* AppDelegate.swift in Sources */,
+				1B58BF6A1BE93FE300573CC7 /* FetchRate.swift in Sources */,
+				1B8DD7A81BE95C4F008A2162 /* GenerateNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +424,7 @@
 				1B2BCCDB1BE7E7B30067DA14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B2BCCDC1BE7E7B30067DA14 /* Build configuration list for PBXNativeTarget "BackgroundTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +433,7 @@
 				1B2BCCDE1BE7E7B30067DA14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

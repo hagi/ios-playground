@@ -9,11 +9,13 @@
 /*
     todo: 
     + fetch data in fg
-    - put to background
-    - local notification
+    + put to background
+    + local notification
+    - notification treshold
 
     issues: 
-    - why the rateLabel is updated few+ seconds after fetching data?
+    + q: why the rateLabel is updated few+ seconds after fetching data?
+        a: not in main queue, setting in main queue helps
 */
 
 import UIKit
@@ -33,7 +35,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         fetchRate()
     }
-    
 
     func fetchRate() {
         println("fetch rate...")
@@ -53,7 +54,10 @@ class ViewController: UIViewController {
                 if let range = match?.rangeAtIndex(1) {
                     let value = (result.substringWithRange(range) as NSString).doubleValue
                     println("double: \(value)")
-                    self.rate = value
+
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.rate = value
+                    }
                 }
             }
         }
