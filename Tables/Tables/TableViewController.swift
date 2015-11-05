@@ -12,7 +12,7 @@
     + dynamic height of rows depending on the data size
     + dynamic backgorund color change
     + rearanging table cells
-    - removing table cells
+    + removing table cells
     - swipe gesture on cell
 */
 import UIKit
@@ -98,6 +98,14 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.setEditing(!tableView.editing, animated: true)
     }
     
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            data.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        }
+    }
     
 }
 
