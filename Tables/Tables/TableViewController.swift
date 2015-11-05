@@ -14,6 +14,10 @@
     + rearanging table cells
     + removing table cells
     - swipe gesture on cell
+
+    issues:
+    + how to disable swipe to delete (deleting should work on edit mode)?
+        => use ...editingStyleForRowAtIndexPath method
 */
 import UIKit
 
@@ -105,6 +109,11 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             data.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
+    }
+    
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+
+        return tableView.editing ? .Delete : .None
     }
     
 }
