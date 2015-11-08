@@ -10,6 +10,8 @@
     todo:
     + initial based on: https://www.youtube.com/watch?v=3IDfgATVqHw
     + custom User object
+    - initializer with properties from https://realm.io/news/jesse-squires-core-data-swift/ (29min)
+    + UsersStore & CoreDataStackManager 
 
     issues: 
     - @objc(User) formula required on model to prevent exceptions, not sure what does it mean
@@ -35,40 +37,21 @@ class ViewController: UIViewController {
     }
 
     @IBAction func bttnSave(sender: UIButton) {
-        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var context = appDelegate.managedObjectContext!
-        
-        var newUser = NSEntityDescription.insertNewObjectForEntityForName("User", inManagedObjectContext: context) as? User
-        
-        if let user = newUser {
-            user.username = txtUsername.text
-            user.password = txtPassword.text
-        }
-
-        context.save(nil)
-        println(newUser)
-        println("Object saved")
-        
+        let user = usersStore.createUser(username: txtUsername.text, password: txtPassword.text)
+        println("user created: \(user)")
+        dataStack.saveContext()
     }
     
     @IBAction func bttnLoad(sender: UIButton) {
-        var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        var context = appDelegate.managedObjectContext!
-        
-        var request = NSFetchRequest(entityName: "User")
-        request.returnsObjectsAsFaults = false
-        request.predicate = NSPredicate(format: "username = %@", txtUsername.text)
-        
-        var results = context.executeFetchRequest(request, error: nil) ?? []
-        if results.count > 0 {
-            let user = results.first as? User
+        let result = usersStore.fetchUsers(txtUsername.text)
+        if result.success {
+            let user = result.objects.first
             txtUsername.text = user?.username
             txtPassword.text = user?.password
             
         } else {
-            println("0 results returned... potential error")
+            println("Error found: \(result.error)")
         }
-        
     }
     
     

@@ -12,7 +12,8 @@ import CoreData
 @objc(User)
 class User: NSManagedObject {
 
+    static let entityName = "User"
+    
     @NSManaged var username: String
     @NSManaged var password: String
-
 }
