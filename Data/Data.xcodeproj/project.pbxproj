@@ -13,6 +13,7 @@
 		1B184B081BEE8970006CF67A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B184B061BEE8970006CF67A /* Main.storyboard */; };
 		1B184B0A1BEE8970006CF67A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B184B091BEE8970006CF67A /* Images.xcassets */; };
 		1B184B191BEE8970006CF67A /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B184B181BEE8970006CF67A /* DataTests.swift */; };
+		1B184B231BEF6F7B006CF67A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B184B221BEF6F7B006CF67A /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		1B184B121BEE8970006CF67A /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B184B171BEE8970006CF67A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B184B181BEE8970006CF67A /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
+		1B184B221BEF6F7B006CF67A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		1B184AFC1BEE8970006CF67A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1B184B221BEF6F7B006CF67A /* User.swift */,
 				1B184AFF1BEE8970006CF67A /* AppDelegate.swift */,
 				1B184B041BEE8970006CF67A /* ViewController.swift */,
 				1B184B061BEE8970006CF67A /* Main.storyboard */,
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B184B231BEF6F7B006CF67A /* User.swift in Sources */,
 				1B184B051BEE8970006CF67A /* ViewController.swift in Sources */,
 				1B184B001BEE8970006CF67A /* AppDelegate.swift in Sources */,
 				1B184B031BEE8970006CF67A /* Data.xcdatamodeld in Sources */,
