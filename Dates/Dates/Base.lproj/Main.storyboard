@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Dates" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="now?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YEz-k8-gFn">
+                                <rect key="frame" x="16" y="290" width="568" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrJ-dt-z2X">
+                                <rect key="frame" x="16" y="319" width="85" height="30"/>
+                                <state key="normal" title="+10 minutes">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTenMinutes:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qSY-zl-7eH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efO-rg-RRU">
+                                <rect key="frame" x="271" y="319" width="58" height="30"/>
+                                <state key="normal" title="+1 week">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addOneWeek:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Rob-kT-aPZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wu-RH-Ovb">
+                                <rect key="frame" x="532" y="319" width="52" height="30"/>
+                                <state key="normal" title="-3 days">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="minusThreeDays:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YgZ-S6-SA4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Wu-RH-Ovb" firstAttribute="top" secondItem="YEz-k8-gFn" secondAttribute="bottom" constant="8" id="44Y-Nc-h4q"/>
+                            <constraint firstItem="efO-rg-RRU" firstAttribute="top" secondItem="YEz-k8-gFn" secondAttribute="bottom" constant="8" id="9FM-IP-0Yn"/>
+                            <constraint firstItem="YEz-k8-gFn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Bz8-Yh-HhV"/>
+                            <constraint firstItem="0Wu-RH-Ovb" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="IdM-tQ-Nkl"/>
+                            <constraint firstItem="mrJ-dt-z2X" firstAttribute="top" secondItem="YEz-k8-gFn" secondAttribute="bottom" constant="8" id="MCL-Wq-wn5"/>
+                            <constraint firstItem="mrJ-dt-z2X" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Sud-n5-1P4"/>
+                            <constraint firstAttribute="centerX" secondItem="efO-rg-RRU" secondAttribute="centerX" id="Vcf-0l-DRx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YEz-k8-gFn" secondAttribute="trailing" id="cIh-7L-dh2"/>
+                            <constraint firstAttribute="centerY" secondItem="YEz-k8-gFn" secondAttribute="centerY" id="tmU-Jw-AY2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="YEz-k8-gFn" id="NMh-nj-VFO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

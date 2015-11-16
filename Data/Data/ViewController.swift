@@ -11,7 +11,7 @@
     + initial based on: https://www.youtube.com/watch?v=3IDfgATVqHw
     + custom User object
     - initializer with properties from https://realm.io/news/jesse-squires-core-data-swift/ (29min)
-    + UsersStore & CoreDataStackManager 
+    + UsersStore & CoreDataStackManager
 
     issues: 
     - @objc(User) formula required on model to prevent exceptions, not sure what does it mean
